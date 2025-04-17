@@ -15,7 +15,7 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
     List<Player> findByGenderAndAgeGreaterThan(Gender gender, int age);
 
     //NON - NATIVE  QUERY
-    // By default nativequery is false it is call JPQL (java persistance Query language)
+    // By default native query is false it is call JPQL (java persistence Query language)
     //@Query(value = "SELECT p FROM Player p WHERE p.gender=:gender AND p.speciality=:speciality",nativeQuery = false)
 
     @Query(value = "SELECT * FROM player WHERE gender=:gender AND speciality=:speciality",nativeQuery = true)
