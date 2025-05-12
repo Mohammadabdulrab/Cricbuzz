@@ -2,10 +2,9 @@ package com.example.Cricbuzz.convertor;
 
 import com.example.Cricbuzz.dto.request.PlayerProfileRequest;
 import com.example.Cricbuzz.dto.response.PlayerProfileResponse;
-import com.example.Cricbuzz.dto.response.PlayerResponse;
 import com.example.Cricbuzz.model.PlayerProfile;
 
-public class PlayerProfileConverter {
+public class PlayerProfileConvertor {
     public static PlayerProfile playerProfileRequestToPlayerProfile(PlayerProfileRequest playerProfileRequest){
         return PlayerProfile.builder()
                 .runs(playerProfileRequest.getRuns())

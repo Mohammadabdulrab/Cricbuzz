@@ -1,6 +1,6 @@
 package com.example.Cricbuzz.service;
 
-import com.example.Cricbuzz.convertor.PlayerProfileConverter;
+import com.example.Cricbuzz.convertor.PlayerProfileConvertor;
 import com.example.Cricbuzz.dto.request.PlayerProfileRequest;
 import com.example.Cricbuzz.dto.response.PlayerProfileResponse;
 import com.example.Cricbuzz.exception.PlayerNotFoundException;
@@ -27,12 +27,12 @@ public class PlayerProfileService {
 
       Player player=optionalPlayer.get();
 
-        PlayerProfile playerProfile= PlayerProfileConverter.playerProfileRequestToPlayerProfile(playerProfileRequest);
+        PlayerProfile playerProfile= PlayerProfileConvertor.playerProfileRequestToPlayerProfile(playerProfileRequest);
 
         player.setPlayerProfile(playerProfile);
         playerProfile.setPlayer(player);
 
         Player savedPlayer = playerRepository.save(player); // saves both player and playerProfile
-        return PlayerProfileConverter.playerProfileToPlayerProfileResponse(savedPlayer.getPlayerProfile());
+        return PlayerProfileConvertor.playerProfileToPlayerProfileResponse(savedPlayer.getPlayerProfile());
     }
 }
